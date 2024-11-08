@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>自我与自然概念圆绘制</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 20px auto;
+        }
+        #controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #controls button.active {
+            background-color: #007BFF;
+            color: white;
+        }
+        .info {
+            text-align: center;
+        }
+        .instructions {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #FF69B4; /* 粉色 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">自我与自然概念圆绘制</h1>
+    <p class="instructions">
+        接下来，请根据提示画两个圆圈：一个圆圈代表“你自己”，一个圆圈代表“自然”。你可以自由调整两个圆圈的大小、远近、包含关系，直至它能够最好地代表你内心对二者关系的主观感受。<br>
+        <span class="highlight">不过，两个圆圈必须完整地画在画框内，不要超出边界。</span><br>
+        如果对当前的操作不满意，可以点击撤销按钮返回上一步。<br>
+        请放心，这里没有对错之分，也不需要符合任何大众观点，只需按照你的直觉和感受来表达即可。<br>
+        感谢你的参与！希望你享受这个过程。
+    </p>
+    <div id="controls">
+        <button id="drawSelf">绘制自我概念圆大小</button>
+        <button id="drawNature">绘制自然概念圆大小</button>
+        <button id="adjustDistance">调整圆的位置</button>
+        <button id="undo">撤销</button>
+    </div>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <div class="info">
+        <p>自然圆面积：<span id="natureArea">0.000</span> 像素²</p>
+        <p>自我圆面积：<span id="selfArea">0.000</span> 像素²</p>
+        <p>自然圆面积 / 自我圆面积：<span id="areaRatio">0.000</span></p>
+        <p>自然圆与自我圆重叠部分的面积：<span id="overlapArea">0.000</span> 像素²</p>
+        <p>自然圆与自我圆重叠部分的面积 / （自然圆面积 + 自我圆面积）：<span id="overlapRatio">0.000</span></p>
+        <p>两圆圆心之间的距离：<span id="distance">0.000</span> 像素</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
